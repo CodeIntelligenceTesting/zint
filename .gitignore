@@ -21,3 +21,5 @@ extern/*
 
 .vscode/
 out/
+.cifuzz/
+.cifuzz-*/

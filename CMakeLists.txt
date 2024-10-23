@@ -3,7 +3,10 @@
 # vim: set ts=4 sw=4 et :
 
 cmake_minimum_required(VERSION 3.5)
-project(zint-package)
+project(zint-package C CXX)
+
+find_package(cifuzz NO_SYSTEM_ENVIRONMENT_PATH)
+enable_fuzz_testing()
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -189,3 +192,7 @@ endif()
 
 configure_file("zint-config.cmake.in" "zint-config.cmake" @ONLY)
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/zint-config.cmake" DESTINATION "${CMAKE_INSTALL_DATADIR}/zint")
+
+add_fuzz_test(fuzz fuzz.cpp)
+target_link_libraries(fuzz zint-static)
+
