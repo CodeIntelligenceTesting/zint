@@ -41,3 +41,7 @@ build-system: cmake
 
 ## Style for CI Fuzz.
 #style: plain
+
+build-system-args:
+  - -DZINT_STATIC=ON
+  - -DZINT_TEST=ON
