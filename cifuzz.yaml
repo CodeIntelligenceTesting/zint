@@ -45,3 +45,6 @@ build-system: cmake
 build-system-args:
   - -DZINT_STATIC=ON
   - -DZINT_TEST=ON
+
+candidate-excludes:
+  - backend/tests/**

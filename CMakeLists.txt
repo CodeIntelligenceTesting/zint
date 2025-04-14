@@ -196,3 +196,4 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/zint-config.cmake" DESTINATION "${CMA
 add_fuzz_test(fuzz fuzz.cpp)
 target_link_libraries(fuzz zint-static)
 
+add_subdirectory(cifuzz-spark)
